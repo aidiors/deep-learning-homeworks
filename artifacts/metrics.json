@@ -1,0 +1,663 @@
+{
+  "track": "cv",
+  "model": "yolo26n.pt",
+  "revision": "ultralytics==8.4.182; sha256=9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+  "dataset": "BCCD, https://github.com/Shenggan/BCCD_Dataset, MIT, revision d272fb14cdff6e473fafeeeba32aba5f560e9e43",
+  "classes": [
+    "RBC",
+    "WBC",
+    "Platelets"
+  ],
+  "n_train": 254,
+  "n_val": 54,
+  "n_test": 56,
+  "params_total": 2572280,
+  "baseline": {
+    "split": "test",
+    "coco_map50": 0.0,
+    "heuristic_map50": 0.2816784061781235,
+    "heuristic_ap50_per_class": {
+      "RBC": 0.0,
+      "WBC": 0.8440828375819895,
+      "Platelets": 0.0009523809523809524
+    }
+  },
+  "final": {
+    "map50": 0.9389762938423033,
+    "map50_95": 0.6320287667896428,
+    "precision": 0.8725226253837571,
+    "recall": 0.9123188405797101,
+    "per_class": {
+      "RBC": {
+        "map50": 0.911760423363699,
+        "map50_95": 0.6550987496228395,
+        "precision": 0.81743114441096,
+        "recall": 0.8369565217391305
+      },
+      "WBC": {
+        "map50": 0.995,
+        "map50_95": 0.7630007335782816,
+        "precision": 0.9892002270978106,
+        "recall": 1.0
+      },
+      "Platelets": {
+        "map50": 0.9101684581632108,
+        "map50_95": 0.4779868171678071,
+        "precision": 0.8109365046425004,
+        "recall": 0.9
+      }
+    },
+    "split": "test",
+    "custom_map50": 0.9213256311368552
+  },
+  "ablation": {
+    "factor": "imgsz",
+    "split": "val",
+    "main": {
+      "imgsz": 640,
+      "map50": 0.9307878869612211,
+      "map50_95": 0.6255117276633674,
+      "train_time_sec": 388.0350628999986
+    },
+    "alternative": {
+      "imgsz": 320,
+      "map50": 0.9126811498206234,
+      "map50_95": 0.6125700786507754,
+      "train_time_sec": 282.6390242000016
+    },
+    "train_args": {
+      "epochs": 60,
+      "imgsz": 320,
+      "batch": 16,
+      "optimizer": "AdamW",
+      "lr0": 0.001,
+      "lrf": 0.05,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 3,
+      "patience": 20,
+      "mosaic": 0.5,
+      "close_mosaic": 10,
+      "mixup": 0.0,
+      "degrees": 90,
+      "flipud": 0.5,
+      "fliplr": 0.5,
+      "hsv_h": 0.01,
+      "hsv_s": 0.2,
+      "hsv_v": 0.2,
+      "translate": 0.1,
+      "scale": 0.3,
+      "seed": 0,
+      "deterministic": true,
+      "val": true,
+      "plots": true,
+      "amp": true,
+      "cache": false,
+      "end2end": true
+    }
+  },
+  "errors": {
+    "tp": 647,
+    "class": 0,
+    "localization": 31,
+    "background": 427,
+    "missed": 47
+  },
+  "device": "NVIDIA GeForce RTX 5070",
+  "train_time_sec": 388.0350628999986,
+  "fast_mode": false,
+  "train_args": {
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 16,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "lrf": 0.05,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3,
+    "patience": 20,
+    "mosaic": 0.5,
+    "close_mosaic": 10,
+    "mixup": 0.0,
+    "degrees": 90,
+    "flipud": 0.5,
+    "fliplr": 0.5,
+    "hsv_h": 0.01,
+    "hsv_s": 0.2,
+    "hsv_v": 0.2,
+    "translate": 0.1,
+    "scale": 0.3,
+    "seed": 0,
+    "deterministic": true,
+    "val": true,
+    "plots": true,
+    "amp": true,
+    "cache": false,
+    "end2end": true
+  },
+  "run_times": {
+    "coco_predict": 0.4207805999976699,
+    "heuristic": 1.478879300000699,
+    "train": 388.0350628999986,
+    "validation": 5.707496999999421,
+    "ablation_train": 282.6390242000016,
+    "extra50_train": 412.5058696999986,
+    "rtdetr_train": 1771.4821462
+  },
+  "bonuses": {
+    "extra50": {
+      "source": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+      "mirror": "https://huggingface.co/datasets/nirschl-lab/acevedo_et_al_2020",
+      "license": "CC BY 4.0",
+      "n_new_images": 50,
+      "n_train_before": 254,
+      "n_train_after": 304,
+      "annotation_seconds": 523.8943316936493,
+      "annotation_counts": {
+        "WBC": 48,
+        "RBC": 558,
+        "Platelets": 43
+      },
+      "train_seconds": 412.5058696999986,
+      "train_args": {
+        "epochs": 60,
+        "imgsz": 640,
+        "batch": 16,
+        "optimizer": "AdamW",
+        "lr0": 0.001,
+        "lrf": 0.05,
+        "weight_decay": 0.0005,
+        "warmup_epochs": 3,
+        "patience": 20,
+        "mosaic": 0.5,
+        "close_mosaic": 10,
+        "mixup": 0.0,
+        "degrees": 90,
+        "flipud": 0.5,
+        "fliplr": 0.5,
+        "hsv_h": 0.01,
+        "hsv_s": 0.2,
+        "hsv_v": 0.2,
+        "translate": 0.1,
+        "scale": 0.3,
+        "seed": 0,
+        "deterministic": true,
+        "val": true,
+        "plots": true,
+        "amp": true,
+        "cache": false,
+        "end2end": true
+      },
+      "before": {
+        "map50": 0.9307878869612211,
+        "map50_95": 0.6255117276633674,
+        "precision": 0.8634646114781105,
+        "recall": 0.9173588334607494,
+        "per_class": {
+          "RBC": {
+            "map50": 0.8577874732190527,
+            "map50_95": 0.6131103387546849,
+            "precision": 0.75312568334431,
+            "recall": 0.8181818181818182
+          },
+          "WBC": {
+            "map50": 0.995,
+            "map50_95": 0.7982583734599482,
+            "precision": 0.9887165082794541,
+            "recall": 1.0
+          },
+          "Platelets": {
+            "map50": 0.9395761876646108,
+            "map50_95": 0.46516647077546924,
+            "precision": 0.8485516428105675,
+            "recall": 0.9338946822004301
+          }
+        }
+      },
+      "after": {
+        "map50": 0.9315662448127523,
+        "map50_95": 0.6376388855802191,
+        "precision": 0.8612562890898195,
+        "recall": 0.9278120072943769,
+        "per_class": {
+          "RBC": {
+            "map50": 0.8637448836219619,
+            "map50_95": 0.6183112727058264,
+            "precision": 0.7766403722516098,
+            "recall": 0.8019545404016489
+          },
+          "WBC": {
+            "map50": 0.995,
+            "map50_95": 0.8103549250725031,
+            "precision": 0.9829084634319047,
+            "recall": 1.0
+          },
+          "Platelets": {
+            "map50": 0.9359538508162948,
+            "map50_95": 0.48425045896232743,
+            "precision": 0.8242200315859439,
+            "recall": 0.9814814814814815
+          }
+        }
+      },
+      "split": "val",
+      "epochs": 60
+    },
+    "rtdetr": {
+      "model": "rtdetr-l.pt",
+      "weights_sha256": "6de60b10d4bc566f00cda0f5b4d64afe4b66d48dc9695d2171effb7859d8e73f",
+      "params": 32812241,
+      "params_pretrained": 32970476,
+      "train_seconds": 1771.4821462,
+      "epochs": 60,
+      "metrics": {
+        "map50": 0.3873971553338782,
+        "map50_95": 0.25255666955130246,
+        "precision": 0.19183326715706864,
+        "recall": 0.7224226390893058,
+        "per_class": {
+          "RBC": {
+            "map50": 0.718047861162514,
+            "map50_95": 0.4906560000482683,
+            "precision": 0.3007711449636667,
+            "recall": 0.9410774410774411
+          },
+          "WBC": {
+            "map50": 0.19226675350594546,
+            "map50_95": 0.12590592930517738,
+            "precision": 0.1253838575985131,
+            "recall": 0.39285714285714285
+          },
+          "Platelets": {
+            "map50": 0.25187685133317517,
+            "map50_95": 0.14110807930046176,
+            "precision": 0.14934479890902622,
+            "recall": 0.8333333333333334
+          }
+        }
+      },
+      "latency": {
+        "mean_ms": 39.39998999958334,
+        "median_ms": 39.37439999754133,
+        "std_ms": 2.384514530619076,
+        "repeats": 30,
+        "warmup": 5
+      },
+      "yolo_latency": {
+        "mean_ms": 17.154770000342978,
+        "median_ms": 16.73455000127433,
+        "std_ms": 1.5120904026370277,
+        "repeats": 30,
+        "warmup": 5
+      },
+      "yolo_metrics": {
+        "map50": 0.9307878869612211,
+        "map50_95": 0.6255117276633674,
+        "precision": 0.8634646114781105,
+        "recall": 0.9173588334607494,
+        "per_class": {
+          "RBC": {
+            "map50": 0.8577874732190527,
+            "map50_95": 0.6131103387546849,
+            "precision": 0.75312568334431,
+            "recall": 0.8181818181818182
+          },
+          "WBC": {
+            "map50": 0.995,
+            "map50_95": 0.7982583734599482,
+            "precision": 0.9887165082794541,
+            "recall": 1.0
+          },
+          "Platelets": {
+            "map50": 0.9395761876646108,
+            "map50_95": 0.46516647077546924,
+            "precision": 0.8485516428105675,
+            "recall": 0.9338946822004301
+          }
+        }
+      },
+      "yolo_params": 2534858,
+      "train_args": {
+        "epochs": 60,
+        "imgsz": 640,
+        "batch": 4,
+        "optimizer": "AdamW",
+        "lr0": 0.0001,
+        "lrf": 0.05,
+        "weight_decay": 0.0001,
+        "warmup_epochs": 3,
+        "patience": 20,
+        "mosaic": 0.0,
+        "close_mosaic": 0,
+        "mixup": 0.0,
+        "degrees": 90,
+        "flipud": 0.5,
+        "fliplr": 0.5,
+        "hsv_h": 0.01,
+        "hsv_s": 0.2,
+        "hsv_v": 0.2,
+        "translate": 0.1,
+        "scale": 0.3,
+        "seed": 0,
+        "deterministic": true,
+        "val": true,
+        "plots": true,
+        "amp": true,
+        "cache": false
+      },
+      "split": "val",
+      "n_train": 254,
+      "n_val": 54,
+      "device": "NVIDIA GeForce RTX 5070"
+    },
+    "export": {
+      "format": "ONNX",
+      "onnx_version": "1.23.2",
+      "runtime": "1.32.0",
+      "device": "CPU",
+      "torch_threads": 8,
+      "onnx_threads": 8,
+      "precision": "FP32",
+      "protocol": "Forward only, same input tensor, 10 warmups, 40 repeats, median",
+      "imgsz": 640,
+      "batch": 1,
+      "rect": false,
+      "split": "val",
+      "latency_pytorch": {
+        "mean_ms": 55.913834999773826,
+        "median_ms": 55.97920000036538,
+        "std_ms": 2.667758061474434,
+        "repeats": 40,
+        "warmup": 10
+      },
+      "latency_onnx": {
+        "mean_ms": 23.430212500261405,
+        "median_ms": 23.03570000185573,
+        "std_ms": 1.9498554752635593,
+        "repeats": 40,
+        "warmup": 10
+      },
+      "speedup": 2.43010631306432,
+      "pytorch": {
+        "map50": 0.9077297660326898,
+        "map50_95": 0.6144510419611703,
+        "precision": 0.8371577859953,
+        "recall": 0.9012345679012346,
+        "per_class": {
+          "RBC": {
+            "map50": 0.8308114824556178,
+            "map50_95": 0.5945960738974623,
+            "precision": 0.703245521683018,
+            "recall": 0.7962962962962963
+          },
+          "WBC": {
+            "map50": 0.995,
+            "map50_95": 0.7961937607196972,
+            "precision": 0.9943682718227617,
+            "recall": 1.0
+          },
+          "Platelets": {
+            "map50": 0.8973778156424517,
+            "map50_95": 0.45256329126635136,
+            "precision": 0.8138595644801205,
+            "recall": 0.9074074074074074
+          }
+        }
+      },
+      "onnx": {
+        "map50": 0.9077297660326898,
+        "map50_95": 0.6144514493248318,
+        "precision": 0.8371588068036934,
+        "recall": 0.9012345679012346,
+        "per_class": {
+          "RBC": {
+            "map50": 0.8308114824556178,
+            "map50_95": 0.594596075546036,
+            "precision": 0.7032482939432001,
+            "recall": 0.7962962962962963
+          },
+          "WBC": {
+            "map50": 0.995,
+            "map50_95": 0.7961937607196972,
+            "precision": 0.9943698204873984,
+            "recall": 1.0
+          },
+          "Platelets": {
+            "map50": 0.8973778156424517,
+            "map50_95": 0.4525645117087618,
+            "precision": 0.8138583059804816,
+            "recall": 0.9074074074074074
+          }
+        }
+      },
+      "map50_delta": 0.0,
+      "file_size_mb": 9.363192558288574,
+      "onnx_sha256": "ef009ab941ef22ba9037835c89df4a190d139967f184f7e834983f830d059fab"
+    },
+    "robustness": {
+      "brightness_0.5": {
+        "map50": 0.9081410062182842,
+        "map50_95": 0.5881980725078845,
+        "precision": 0.8354032031293972,
+        "recall": 0.8767961446571838,
+        "per_class": {
+          "RBC": {
+            "map50": 0.8319781339252456,
+            "map50_95": 0.5736977232018041,
+            "precision": 0.7277967209376073,
+            "recall": 0.82996632996633
+          },
+          "WBC": {
+            "map50": 0.995,
+            "map50_95": 0.7486238261235751,
+            "precision": 0.950762256176804,
+            "recall": 1.0
+          },
+          "Platelets": {
+            "map50": 0.8974448847296069,
+            "map50_95": 0.4422726681982739,
+            "precision": 0.82765063227378,
+            "recall": 0.8004221040052216
+          }
+        }
+      },
+      "blur_2": {
+        "map50": 0.9258033419762713,
+        "map50_95": 0.6046557616757336,
+        "precision": 0.8206945695658963,
+        "recall": 0.9444444444444443,
+        "per_class": {
+          "RBC": {
+            "map50": 0.8551933901304651,
+            "map50_95": 0.5791707379879253,
+            "precision": 0.6900492929095206,
+            "recall": 0.8703703703703703
+          },
+          "WBC": {
+            "map50": 0.995,
+            "map50_95": 0.7651497449230938,
+            "precision": 0.9840632622309443,
+            "recall": 1.0
+          },
+          "Platelets": {
+            "map50": 0.9272166357983486,
+            "map50_95": 0.4696468021161821,
+            "precision": 0.7879711535572239,
+            "recall": 0.9629629629629629
+          }
+        }
+      },
+      "jpeg_10": {
+        "map50": 0.5829754521131574,
+        "map50_95": 0.2586242601122931,
+        "precision": 0.7140245309306273,
+        "recall": 0.5300359655802991,
+        "per_class": {
+          "RBC": {
+            "map50": 0.23232267569085968,
+            "map50_95": 0.07968302860078845,
+            "precision": 0.7412777263117338,
+            "recall": 0.08200450048300043
+          },
+          "WBC": {
+            "map50": 0.8430695407046889,
+            "map50_95": 0.46975521717799323,
+            "precision": 0.8221487764317937,
+            "recall": 0.8214285714285714
+          },
+          "Platelets": {
+            "map50": 0.6735341399439235,
+            "map50_95": 0.22643453455809767,
+            "precision": 0.5786470900483549,
+            "recall": 0.6866748248293254
+          }
+        }
+      }
+    },
+    "thresholds": [
+      {
+        "end2end": true,
+        "iou": 0.3,
+        "conf": 0.001,
+        "precision": 0.11450008155276464,
+        "recall": 0.9971590909090909,
+        "map50": 0.9024206820928425,
+        "detections": 6131
+      },
+      {
+        "end2end": true,
+        "iou": 0.3,
+        "conf": 0.1,
+        "precision": 0.4696441032798325,
+        "recall": 0.9559659090909091,
+        "map50": 0.8899771800773122,
+        "detections": 1433
+      },
+      {
+        "end2end": true,
+        "iou": 0.3,
+        "conf": 0.25,
+        "precision": 0.5855203619909503,
+        "recall": 0.9190340909090909,
+        "map50": 0.8740021256495926,
+        "detections": 1105
+      },
+      {
+        "end2end": true,
+        "iou": 0.3,
+        "conf": 0.5,
+        "precision": 0.7083333333333334,
+        "recall": 0.796875,
+        "map50": 0.7913150364777902,
+        "detections": 792
+      },
+      {
+        "end2end": true,
+        "iou": 0.7,
+        "conf": 0.001,
+        "precision": 0.11450008155276464,
+        "recall": 0.9971590909090909,
+        "map50": 0.9024206820928425,
+        "detections": 6131
+      },
+      {
+        "end2end": true,
+        "iou": 0.7,
+        "conf": 0.1,
+        "precision": 0.4696441032798325,
+        "recall": 0.9559659090909091,
+        "map50": 0.8899771800773122,
+        "detections": 1433
+      },
+      {
+        "end2end": true,
+        "iou": 0.7,
+        "conf": 0.25,
+        "precision": 0.5855203619909503,
+        "recall": 0.9190340909090909,
+        "map50": 0.8740021256495926,
+        "detections": 1105
+      },
+      {
+        "end2end": true,
+        "iou": 0.7,
+        "conf": 0.5,
+        "precision": 0.7083333333333334,
+        "recall": 0.796875,
+        "map50": 0.7913150364777902,
+        "detections": 792
+      },
+      {
+        "end2end": false,
+        "iou": 0.3,
+        "conf": 0.001,
+        "precision": 0.17251755265797392,
+        "recall": 0.9772727272727273,
+        "map50": 0.9097426735308733,
+        "detections": 3988
+      },
+      {
+        "end2end": false,
+        "iou": 0.3,
+        "conf": 0.1,
+        "precision": 0.49774774774774777,
+        "recall": 0.9417613636363636,
+        "map50": 0.9002197322234533,
+        "detections": 1332
+      },
+      {
+        "end2end": false,
+        "iou": 0.3,
+        "conf": 0.25,
+        "precision": 0.603219696969697,
+        "recall": 0.9048295454545454,
+        "map50": 0.8882410407924395,
+        "detections": 1056
+      },
+      {
+        "end2end": false,
+        "iou": 0.3,
+        "conf": 0.5,
+        "precision": 0.738191632928475,
+        "recall": 0.7769886363636364,
+        "map50": 0.8158845141796697,
+        "detections": 741
+      },
+      {
+        "end2end": false,
+        "iou": 0.7,
+        "conf": 0.001,
+        "precision": 0.06849848972035467,
+        "recall": 0.9985795454545454,
+        "map50": 0.9116543237007931,
+        "detections": 10263
+      },
+      {
+        "end2end": false,
+        "iou": 0.7,
+        "conf": 0.1,
+        "precision": 0.46487603305785125,
+        "recall": 0.9588068181818182,
+        "map50": 0.9033933744125339,
+        "detections": 1452
+      },
+      {
+        "end2end": false,
+        "iou": 0.7,
+        "conf": 0.25,
+        "precision": 0.5895316804407713,
+        "recall": 0.9119318181818182,
+        "map50": 0.8896677342569053,
+        "detections": 1089
+      },
+      {
+        "end2end": false,
+        "iou": 0.7,
+        "conf": 0.5,
+        "precision": 0.7379032258064516,
+        "recall": 0.7798295454545454,
+        "map50": 0.8166870782453781,
+        "detections": 744
+      }
+    ]
+  }
+}

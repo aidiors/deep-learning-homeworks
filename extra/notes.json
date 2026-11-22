@@ -1,0 +1,21 @@
+{
+  "categories": [
+    {
+      "id": "0",
+      "name": "RBC"
+    },
+    {
+      "id": "1",
+      "name": "WBC"
+    },
+    {
+      "id": "2",
+      "name": "Platelets"
+    }
+  ],
+  "info": {
+    "year": 2026,
+    "version": "1.0",
+    "contributor": "Label Studio"
+  }
+}

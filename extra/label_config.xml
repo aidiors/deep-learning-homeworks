@@ -1,0 +1,1 @@
+<View><Image name="image" value="$image"/><RectangleLabels name="label" toName="image"><Label value="RBC" category="0"/><Label value="WBC" category="1"/><Label value="Platelets" category="2"/></RectangleLabels></View>

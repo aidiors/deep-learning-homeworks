@@ -1,0 +1,18 @@
+{
+  "started_unix": 1795375040.3012915,
+  "status": "annotated",
+  "finished_unix": 1795375522.1859872,
+  "annotation_seconds": 481.609934091568,
+  "images": 50,
+  "objects": {
+    "WBC": 48,
+    "RBC": 558,
+    "Platelets": 43
+  },
+  "method": "Visual inspection and manually specified rectangles",
+  "exporter": "label-studio-converter 0.0.59",
+  "policy": "Visible cells, edge cells when approximately half or more is visible. Indistinct stain debris and smaller edge fragments omitted.",
+  "reviewed_images": 50,
+  "review_finished_unix": 1795375564.195623,
+  "total_annotation_and_review_seconds": 523.8943316936493
+}

@@ -1,0 +1,6 @@
+data/
+runs_hw2/
+.ipynb_checkpoints/
+__pycache__/
+yolo*.pt
+rtdetr*.pt
