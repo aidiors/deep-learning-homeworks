@@ -1,0 +1,98 @@
+{
+  "source": "https://data.mendeley.com/datasets/snkd93bnjr/1",
+  "mirror": "https://huggingface.co/datasets/nirschl-lab/acevedo_et_al_2020",
+  "license": "CC BY 4.0",
+  "n_new_images": 50,
+  "n_train_before": 254,
+  "n_train_after": 304,
+  "annotation_seconds": 523.8943316936493,
+  "annotation_counts": {
+    "WBC": 48,
+    "RBC": 558,
+    "Platelets": 43
+  },
+  "train_seconds": 412.5058696999986,
+  "train_args": {
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 16,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "lrf": 0.05,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3,
+    "patience": 20,
+    "mosaic": 0.5,
+    "close_mosaic": 10,
+    "mixup": 0.0,
+    "degrees": 90,
+    "flipud": 0.5,
+    "fliplr": 0.5,
+    "hsv_h": 0.01,
+    "hsv_s": 0.2,
+    "hsv_v": 0.2,
+    "translate": 0.1,
+    "scale": 0.3,
+    "seed": 0,
+    "deterministic": true,
+    "val": true,
+    "plots": true,
+    "amp": true,
+    "cache": false,
+    "end2end": true
+  },
+  "before": {
+    "map50": 0.9307878869612211,
+    "map50_95": 0.6255117276633674,
+    "precision": 0.8634646114781105,
+    "recall": 0.9173588334607494,
+    "per_class": {
+      "RBC": {
+        "map50": 0.8577874732190527,
+        "map50_95": 0.6131103387546849,
+        "precision": 0.75312568334431,
+        "recall": 0.8181818181818182
+      },
+      "WBC": {
+        "map50": 0.995,
+        "map50_95": 0.7982583734599482,
+        "precision": 0.9887165082794541,
+        "recall": 1.0
+      },
+      "Platelets": {
+        "map50": 0.9395761876646108,
+        "map50_95": 0.46516647077546924,
+        "precision": 0.8485516428105675,
+        "recall": 0.9338946822004301
+      }
+    }
+  },
+  "after": {
+    "map50": 0.9315662448127523,
+    "map50_95": 0.6376388855802191,
+    "precision": 0.8612562890898195,
+    "recall": 0.9278120072943769,
+    "per_class": {
+      "RBC": {
+        "map50": 0.8637448836219619,
+        "map50_95": 0.6183112727058264,
+        "precision": 0.7766403722516098,
+        "recall": 0.8019545404016489
+      },
+      "WBC": {
+        "map50": 0.995,
+        "map50_95": 0.8103549250725031,
+        "precision": 0.9829084634319047,
+        "recall": 1.0
+      },
+      "Platelets": {
+        "map50": 0.9359538508162948,
+        "map50_95": 0.48425045896232743,
+        "precision": 0.8242200315859439,
+        "recall": 0.9814814814814815
+      }
+    }
+  },
+  "split": "val",
+  "epochs": 60
+}

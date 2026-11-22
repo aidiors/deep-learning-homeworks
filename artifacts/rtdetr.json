@@ -1,0 +1,107 @@
+{
+  "model": "rtdetr-l.pt",
+  "weights_sha256": "6de60b10d4bc566f00cda0f5b4d64afe4b66d48dc9695d2171effb7859d8e73f",
+  "params": 32812241,
+  "params_pretrained": 32970476,
+  "train_seconds": 1771.4821462,
+  "epochs": 60,
+  "metrics": {
+    "map50": 0.3873971553338782,
+    "map50_95": 0.25255666955130246,
+    "precision": 0.19183326715706864,
+    "recall": 0.7224226390893058,
+    "per_class": {
+      "RBC": {
+        "map50": 0.718047861162514,
+        "map50_95": 0.4906560000482683,
+        "precision": 0.3007711449636667,
+        "recall": 0.9410774410774411
+      },
+      "WBC": {
+        "map50": 0.19226675350594546,
+        "map50_95": 0.12590592930517738,
+        "precision": 0.1253838575985131,
+        "recall": 0.39285714285714285
+      },
+      "Platelets": {
+        "map50": 0.25187685133317517,
+        "map50_95": 0.14110807930046176,
+        "precision": 0.14934479890902622,
+        "recall": 0.8333333333333334
+      }
+    }
+  },
+  "latency": {
+    "mean_ms": 39.39998999958334,
+    "median_ms": 39.37439999754133,
+    "std_ms": 2.384514530619076,
+    "repeats": 30,
+    "warmup": 5
+  },
+  "yolo_latency": {
+    "mean_ms": 17.154770000342978,
+    "median_ms": 16.73455000127433,
+    "std_ms": 1.5120904026370277,
+    "repeats": 30,
+    "warmup": 5
+  },
+  "yolo_metrics": {
+    "map50": 0.9307878869612211,
+    "map50_95": 0.6255117276633674,
+    "precision": 0.8634646114781105,
+    "recall": 0.9173588334607494,
+    "per_class": {
+      "RBC": {
+        "map50": 0.8577874732190527,
+        "map50_95": 0.6131103387546849,
+        "precision": 0.75312568334431,
+        "recall": 0.8181818181818182
+      },
+      "WBC": {
+        "map50": 0.995,
+        "map50_95": 0.7982583734599482,
+        "precision": 0.9887165082794541,
+        "recall": 1.0
+      },
+      "Platelets": {
+        "map50": 0.9395761876646108,
+        "map50_95": 0.46516647077546924,
+        "precision": 0.8485516428105675,
+        "recall": 0.9338946822004301
+      }
+    }
+  },
+  "yolo_params": 2534858,
+  "train_args": {
+    "epochs": 60,
+    "imgsz": 640,
+    "batch": 4,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.05,
+    "weight_decay": 0.0001,
+    "warmup_epochs": 3,
+    "patience": 20,
+    "mosaic": 0.0,
+    "close_mosaic": 0,
+    "mixup": 0.0,
+    "degrees": 90,
+    "flipud": 0.5,
+    "fliplr": 0.5,
+    "hsv_h": 0.01,
+    "hsv_s": 0.2,
+    "hsv_v": 0.2,
+    "translate": 0.1,
+    "scale": 0.3,
+    "seed": 0,
+    "deterministic": true,
+    "val": true,
+    "plots": true,
+    "amp": true,
+    "cache": false
+  },
+  "split": "val",
+  "n_train": 254,
+  "n_val": 54,
+  "device": "NVIDIA GeForce RTX 5070"
+}
